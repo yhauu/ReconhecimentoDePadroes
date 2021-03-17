@@ -14,6 +14,16 @@ import java.io.FileReader;
 
 public class Main {
 
+    public static void main(String[] args) throws Exception {
+        float[][] matriz = lerEntradaTxt("entrada.txt");
+
+        if (matriz.length > 0) {
+            centroGravitacional(matriz);
+        } else {
+            System.out.println("Matriz inválida!");
+        }
+    }
+
     public static float[][] lerEntradaTxt(String nomeArquivo) throws Exception {
         FileReader arquivo = new FileReader(nomeArquivo);
         BufferedReader leitorArq = new BufferedReader(arquivo);
@@ -62,7 +72,6 @@ public class Main {
             float somaValoresLinhasAcima = 0f;
             float somaValoresLinhasAbaixo = 0f;
             float diferencaLinhasAtual = 0f;
-            float valorCentroGravitacinal = 0f;
 
             for (int linhasAcima = linhaAtual - 1; linhasAcima >= 0; linhasAcima--) {
                 for (int colunasAcima = 0; colunasAcima < matriz[linhasAcima].length; colunasAcima++) {
@@ -137,16 +146,5 @@ public class Main {
             }
         }
         System.out.println("Centro: " + linhaCentroGravitacional + ", " + colunaCentroGravitacional);
-        System.out.println("Diferenca centro: " + menorDiferencaLinhas + ", " + menorDiferencaColunas);
-    }
-
-    public static void main(String[] args) throws Exception {
-        float[][] matriz = lerEntradaTxt("entrada.txt");
-
-        if (matriz.length > 0) {
-            centroGravitacional(matriz);
-        } else {
-            System.out.println("Matriz inválida!");
-        }
     }
 }
