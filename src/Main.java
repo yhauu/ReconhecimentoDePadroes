@@ -90,7 +90,7 @@ public class Main {
                 }
             }
 
-            //Verifica quantas linhas tem abaixo, e varre linha por linha somando os valores
+            //Verifica quantas linhas tem abaixo e varre linha por linha somando os valores
             int linhasAbaixo = linhaAtual + 1;
             if (linhasAbaixo <= numeroLinhasAbaixo) {
                 do {
@@ -139,7 +139,7 @@ public class Main {
                     diferencaColunasAtual = (somaValoresColunasEsquerda - somaValoresColunasDireita);
                 }
 
-                //Verifica a menor diferença entre a soma dos valores das colunas e guarda o menor valor
+                //Verifica a menor diferença das colunas e guarda o menor valor
                 if (diferencaColunasAtual != 0) {
                     if (linhaAtual != 0 || colunaAtual != 0) {
                         if (diferencaColunasAtual < menorDiferencaColunas) {
@@ -155,7 +155,7 @@ public class Main {
                 }
             }
 
-            //Verifica a menor diferença entre a soma dos valores das linhas e guarda o menor valor
+            //Verifica a menor diferença das linhas e guarda o menor valor
             if (diferencaLinhasAtual != 0) {
                 if (diferencaLinhasAtual < menorDiferencaLinhas) {
                     menorDiferencaLinhas = diferencaLinhasAtual;
@@ -164,6 +164,6 @@ public class Main {
             }
         }
         //Entrega para o usuário qual linha e coluna está o primeiro centro gravitacional
-        System.out.println("Centro: " + linhaCentroGravitacional + ", " + colunaCentroGravitacional);
+        System.out.println("Centro (" + linhaCentroGravitacional + ", " + colunaCentroGravitacional + ")");
     }
 }
